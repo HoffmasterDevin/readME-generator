@@ -3,6 +3,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const markdown = require('./utils/generateMarkdown.js');
 
+const readmeFilePath = './output/README.md';
+
 // User input array
 const inputs = [
     "What is the title of this project?: ",
@@ -33,37 +35,37 @@ function init() {
     .prompt([
         {
             type: 'input',
-            message: questions[0],
+            message: inputs[0],
             name: 'title',
         },
         {
             type: 'input',
-            message: questions[1],
+            message: inputs[1],
             name: 'description',
         },
         {
             type: 'input',
-            message: questions[2],
+            message: inputs[2],
             name: 'install',
         },
         {
             type: 'input',
-            message: questions[3],
+            message: inputs[3],
             name: 'usage',
         },
         {
             type: 'input',
-            message: questions[4],
+            message: inputs[4],
             name: 'contribution',
         },
         {
             type: 'input',
-            message: questions[5],
+            message: inputs[5],
             name: 'testing',
         },
         {
             type: 'list',
-            message: questions[6],
+            message: inputs[6],
             name: 'license',
             choices: [
                 "None",
@@ -74,12 +76,12 @@ function init() {
         },
         {
             type: 'input',
-            message: questions[7],
+            message: inputs[7],
             name: 'gitHubUser',
         },
         {
             type: 'input',
-            message: questions[8],
+            message: inputs[8],
             name: 'email',
         },
     ])
